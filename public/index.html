@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8" />
+
+	<!-- Ensure that everything scales appropriately on a mobile device -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- Let's borrow a cool looking Font from Google -->
+	<link href='https://fonts.googleapis.com/css?family=Quicksand:300,400,700' rel='stylesheet' type='text/css'>
+
+	<link href="css/background.css" rel="stylesheet">
+	<link href="css/main.css" rel="stylesheet">
+	<!-- <link href="css/main.css" rel="stylesheet"> -->
+</head>
+
+<body>
+	<div role="banner" class="banner">
+		<img src="css/imports/banner-01.png"/>
+		<!-- flowy background -->
+	</div>
+
+	<main id="gameArea">
+		<!-- This is where the templates defined below will be used -->
+	</main>
+
+	<!-- Main Title Screen that appears when the page loads for the first time -->
+	<script id="intro-screen-template" type="text/template">
+
+        <div class="titleWrapper">
+
+			<header class="title">
+				<!-- current page title or system prompt/feedback -->
+				
+				<div class="title game-title no-outline">
+					<!-- in the case of the pink box, this would be class="outline" -->
+					<h1>Thunk</h1>
+					<!-- during a round the h1 would be a prompt, so content might be "TFOML" -->
+					<!-- otherwise it may be "round 3 scores", "player 4 wins", "final scores" -->
+				</div>
+			</header>
+
+            <div class="buttons enter-game">
+                <button id="btnCreateGame" class="btn left btnHome">CREATE</button>
+                <button id="btnJoinGame" class="btn right btnHome">JOIN</button>
+                <div style="clear:both"></div>
+			</div>
+		</div>
+		
+		<div role="footer" class="footer">
+			<img src="css/imports/banner-01.png"/>
+			<!-- footer flowy background -->
+		</div>
+    </script>
+
+	<!-- This screen appears when a user clicks "CREATE" on the Title Screen -->
+	<script id="create-game-template" type="text/template">
+        <div class="createGameWrapper">
+
+			<section class="primary">
+				<ul>
+					<li><div class="info">Go to <a id="gameURL">Error!</a> on your player device</div></li>
+					<li><div class="info">Click <strong>JOIN</strong> and <br/> enter the following Game ID:</div></li>			
+				</ul>
+				<div id="spanNewGameCode" class="gameId">Error!</div>
+				<div id="playersWaiting"></div>
+			</section>
+			
+			<section role="status" class="system-status">
+				<!-- non-interactive system feedback -->
+				<div class="closed-captions">
+					<!-- narration captions -->
+				</div>
+			</section>
+
+        </div>
+    </script>
+
+	<!-- This screen appears when a player clicks "JOIN" on the Title Screen -->
+	<script id="join-game-template" type="text/template">
+        <div class="joinGameWrapper">
+			<header class="title">
+				<!-- current page title or system prompt/feedback -->
+				<div class="brand-mark">
+					<!-- for use on landing and room join -->
+				</div>
+				<div class="game-title no-outline">
+					<!-- in the case of the pink box, this would be class="outline" -->
+					<h1>Welcome</h1>
+					<span class="subtitle">Please enter a room code</span>
+					<!-- during a round the h1 would be a prompt, so content might be "TFOML" -->
+					<!-- otherwise it may be "round 3 scores", "player 4 wins", "final scores" -->
+				</div>
+			</header>            
+
+            <div class="info">
+                <label for="inputGameId">Game ID:</label>
+                <input id="inputGameId" type="number"/>
+			</div>				
+
+            <div class="info buttons">
+                <button id="btnStart" class="btn">Join Room</button>
+            </div>
+        </div>
+	</script>
+
+	<!-- This screen appears when a player clicks "Join Game" on the Join Screen -->
+	<script id="nickname-select-template" type="text/template">
+        <div class="joinGameWrapper">
+			<header class="title">
+				<!-- current page title or system prompt/feedback -->
+				<div class="brand-mark">
+					<!-- for use on landing and room join -->
+				</div>
+				<div class="game-title no-outline">
+					<!-- in the case of the pink box, this would be class="outline" -->
+					<h1>Write your nickname</h1>
+					<span class="subtitle">Who are you</span>
+					<!-- during a round the h1 would be a prompt, so content might be "TFOML" -->
+					<!-- otherwise it may be "round 3 scores", "player 4 wins", "final scores" -->
+				</div>
+			</header>            
+
+			<div class="info">
+                <label for="inputPlayerName">Your Name:</label>
+                <input id="inputPlayerName" type="text"/>
+            </div>
+				
+            <div class="info buttons">
+                <button id="btnNicknameSelect" class="btn">Select Nickname</button>
+            </div>
+        </div>
+    </script>
+
+	<!-- This screen appears when a player clicks "JOIN" on the Title Screen -->
+	<script id="avatar-select-template" type="text/template">
+        <div class="joinGameWrapper">
+			<header class="title">
+				<!-- current page title or system prompt/feedback -->
+				<div class="brand-mark">
+					<!-- for use on landing and room join -->
+				</div>
+				<div class="game-title no-outline">
+					<!-- in the case of the pink box, this would be class="outline" -->
+					<h1>Choose your character</h1>
+					<span class="subtitle">Please do it</span>
+					<!-- during a round the h1 would be a prompt, so content might be "TFOML" -->
+					<!-- otherwise it may be "round 3 scores", "player 4 wins", "final scores" -->
+				</div>
+			</header>            
+		
+			<!-- This will be generatively filled by avatar list -->
+			<form class="info avatars" id="inputPlayerAvatar">
+			</form>				
+
+            <div class="info buttons">
+                <button id="btnAvatarSelect" class="btn">Select Avatar</button>
+                <button id="btnPlayerLaunchGame" class="btn" style="display: none;">Launch Game</button>
+                <div id="playerWaitingMessage"></div>
+            </div>
+        </div>
+    </script>
+
+	<!-- This scrreen appears for players to enter ploys -->
+	<script id="ploy-template" type="text/template">
+        <div class="joinGameWrapper">
+            <div class="info">
+                <label for="inputPloy">Your ploy:</label>
+                <input id="inputPloy" type="text" />
+            </div>
+
+            <div class="info buttons">
+                <button id="btnSendPloy" class="btn">Validate</button>
+                <div id="playerWaitingMessage"></div>
+            </div>
+        </div>
+    </script>
+
+	<!-- This is the 'Host' screen. It displays the word for each player to match -->
+	<script id="host-game-template" type="text/template">
+        <div id="playerInfos"></div>
+        <div id="promptArea">
+            <div id="hostWord" class="hostPrompt">5</div>
+            <div id="promptBut">BUT</div>
+            <div id="hostSwitchUp" class="hostPrompt"></div>
+        </div>
+        <div id="playersAnswersArea"></div>
+    </script>
+
+	<script id="player-answer-template" type="text/template">
+        <div class="playerAnswer">
+            <div class="answer"></div>
+            <div class="playersVotesArea"></div>
+        </div>
+    </script>
+
+	<script id="player-vote-template" type="text/template">
+        <div class="playerVote">
+            <div class="malus"></div>
+            <div class="playerName"></div>
+            <div class="bonus"></div>
+        </div>
+    </script>
+
+	<script id="player-info-template" type="text/template">
+        <div class="playerInfo">
+            <div class="playerScore">0</div><div class="playerName">Player</div>
+        </div>
+    </script>
+
+	<!-- Wait screen -->
+	<script id="wait-screen-template" type="text/template">
+        <div class="titleWrapper">
+            <div class="title">
+                Please wait
+            </div>
+        </div>
+    </script>
+
+	<script id="restart-screen-template" type="text/template">
+        <div class="titleWrapper">
+            <button id="btnPlayerLaunchGame" class="btn">Launch Game</button>
+        </div>
+	</script>
+
+	<script id="game-winner-template" type="text/template">
+		<header class="title">
+			<!-- current page title or system prompt/feedback -->
+			<h1>We have a winner!</h1>
+		</header>
+		<section class="primary">
+			<!-- description of main header, or forms/primary interactions -->
+			<div class="hightlighted-player">
+				<div id="winner-player-avatar">
+				</div>
+				<div class="player-name">
+					<p id="winner-player-name">ERROR!</p>
+				</div>
+			</div>
+		</section>
+		<section class="cta">
+		</section>
+		<section role="status" class=g oneself between all the views of the program. Used for debugging"system-status">
+			<!-- non-interactive system feedback -->
+			<div class="closed-captions">
+				<!-- narration captions -->
+			</div>
+		</section>
+	</script>
+
+	<script id="standings-template" type="text/template">
+		<div role="banner" class="banner">
+			<!-- flowy background -->
+		</div>
+		<main>
+			<header class="title">
+				<!-- current page title or system prompt/feedback -->
+				<h1 id="score-page-title">Round #0 Scores</h1>
+			</header>
+			<section class="primary">
+				<!-- description of main header, or forms/primary interactions -->
+				<h2>Let's see how you all finished up!</h2>
+				<ol class="score-standings" id="standings-list"></ol>
+			</section>
+			<section role="status" class="system-status">
+				<!-- non-interactive system feedback -->
+				<div class="closed-captions">
+					<!-- narration captions -->
+				</div>
+			</section>
+		</main>
+	</script>
+
+	<script id="credits-screen-template" type="text/template">
+		<div role="banner" class="banner">
+		<!-- flowy background -->
+		</div>
+		<main class="credit-container">
+			<header class="title">
+				<!-- current page title or system prompt/feedback -->
+				<h1>Thunk</h1>
+			</header>
+			<section class="primary">
+				<!-- description of main header, or forms/primary interactions -->
+				<div class="credits">
+					<h2>Credits</h2>
+					<ul class="team-members">
+						<li class="member">Erik Martus
+							<ul class="member-roles">
+								<li>Project Manager</li>
+								<li>Front End Development Lead</li>
+								<li>User Researcher</li>
+								<li>User Interface Designer</li>
+							</ul>
+						</li>
+						<li class="member">Ben Schenerman
+							<ul class="member-roles">
+								<li>Assistant Project Manager</li>
+								<li>Back End Development Lead</li>
+								<li>User Researcher</li>
+							</ul>
+						</li>
+						<li class="member">Beck Rivera
+							<ul class="member-roles">
+								<li>Back End Developer</li>
+								<li>Game Mechanics Designer</li>
+								<li>User Researcher</li>
+							</ul>
+						</li>
+						<li class="member">Brianna Buissereth
+							<ul class="member-roles">
+								<li>Design Lead</li>
+								<li>User Interface Designer</li>
+								<li>Interaction Designer</li>
+								<li>User Researcher</li>
+							</ul>
+						</li>
+						<li class="member">Arpit Ahluwalia
+							<ul class="member-roles">
+								<li>User Interface Designer</li>
+								<li>Interaction Designer</li>
+								<li>User Researcher</li>
+								<li>User Experience Designer</li>
+								<li>Front End Developer</li>
+							</ul>
+						</li>
+						<li class="member">Fidel Boamah
+							<ul class="member-roles">
+								<li>User Interface Designer</li>
+								<li>Interaction Designer</li>
+								<li>User Researcher</li>
+								<li>User Experience Designer</li>
+								<li>Front End Developer</li>
+							</ul>
+						</li>
+						<li class="member">Ben Murray
+							<ul class="member-roles">
+								<li>User Interface Designer</li>
+								<li>Interaction Designer</li>
+								<li>User Researcher</li>
+								<li>User Experience Designer</li>
+								<li>Front End Developer</li>
+							</ul>
+						</li>
+						<li class="member">Jacob Long
+							<ul class="member-roles">
+								<li>Script Writer</li>
+							</ul>
+						</li>
+						<li class="member">Neil Mancuso
+							<ul class="member-roles">
+								<li>Sound Designer</li>
+							</ul>
+						</li>
+						<li class="member">Ryan Do
+							<ul class="member-roles">
+								<li>Narrator</li>
+							</ul>
+						</li>
+						<li class="member">Troy Finamore
+							<ul class="member-roles">
+								<li>Faculty Advisor</li>
+							</ul>
+						</li>
+					</ul>
+					<div class="acknowledgements">
+						<h3>Special Thanks</h3>
+						<p><b>All of our familes</b> for funding our college endeavors</p>
+						<p><b>Troy Finamore</b> for his investment of &#36;1.00</p>
+					</div>
+				</div>
+			</section>
+			<section class="cta">
+				<!-- if the primary section is a description, calls to action go here -->
+				<button id="btnPlayerRestart">New Game</button>
+				<!-- <button id="btnNewPlayers">New Players</button> -->
+			</section>
+			<section role="status" class="system-status">
+				<!-- non-interactive system feedback -->
+				<div class="closed-captions">
+					<!-- narration captions -->
+				</div>
+			</section>
+		</main>
+	</script>
+
+	<footer></footer>
+
+	<!-- JavaScript Libraries -->
+
+	<!-- jQuery! -->
+	<script src="libs/jquery-2.0.2.min.js"></script>
+
+	<!-- TextFit resizes text to fill a container.
+        It's used so the titles and game words fit properly on any size screen.
+        https://github.com/STRML/textFit   -->
+	<script src="libs/textFit.min.js"></script>
+
+	<!-- FastClick is used to eliminate the 300ms delay when clicking items on a mobile device
+        https://github.com/ftlabs/fastclick -->
+	<script src="libs/fastclick.js"></script>
+
+	<!-- If Socket.IO is used with Express, then the /socket.io/ path will
+        serve the proper Socket.IO javascript files used by the browser -->
+	<script src="/socket.io/socket.io.js"></script>
+
+	<!-- app.js is where all the client-side Anagrammatix game logic -->
+	<script src="app.js"></script>
+
+</body>
+
+</html>
