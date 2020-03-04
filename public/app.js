@@ -1,4 +1,4 @@
-/* global io, FastClick, textFit */
+/* global io, FastClick */
 
 jQuery(function ($) {
 	'use strict';
@@ -1047,21 +1047,6 @@ jQuery(function ($) {
 			}
 
 		},
-
-		/**
-         * Make the text inside the given element as big as possible
-         * See: https://github.com/STRML/textFit
-         *
-         * @param el The parent element of some text
-         */
-		doTextFit: function (el) {
-			textFit($(el)[0], {
-				minFontSize: 10,
-				maxFontSize: 200,
-				alignVert: true,
-				multiLine: true
-			});
-		}
 	};
 
 	fetch('/config.json').then(data => data.json()).then(json => {
