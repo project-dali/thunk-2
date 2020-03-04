@@ -1,9 +1,18 @@
 .hosting-instructions { 
     text-align: center;
     font-family: var(--McLaren);
-    font-size: 1.2rem;
+    font-size: 2rem;
+    list-style: none;
 }
 
 .hosting-instructions>p>b { 
     color: var(--thunk-pink);
+}
+
+#spanNewGameCode {
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 8rem;
+    font-weight: bold;
+    color: #fff;
 }

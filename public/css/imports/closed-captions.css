@@ -8,6 +8,12 @@
     margin-top: 28rem;
     background: var(--thunk-pink-transparent);
     box-shadow: var(--drop-shadow);
+    position: absolute;
+    bottom: 1rem;
+    left: 50vw;
+    transform: translateY(-100%) translateX(-50%);
+    margin: 0 auto;
+    max-width: 60%;
 }
 
 .closed-captions>h3 { 
