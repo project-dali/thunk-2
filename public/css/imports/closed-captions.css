@@ -1,6 +1,6 @@
 .closed-captions { 
     padding-top: 1.8rem;
-    font-family: 'Mclaren';
+    font-family: var(--Avenir-Next);
     border-radius: 2rem;
     text-align: center;
     width: 50rem;

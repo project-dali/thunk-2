@@ -1,8 +1,6 @@
-.promptcommand{
+.promptcommand {
     position: relative;
-    font-family: McLaren;
-    font-style: normal;
-    font-weight: normal;
+    font-family: var(--McLaren);
     font-size: 1.125em;
     line-height: 1.5em;
     margin-top: 9.125em;
@@ -12,10 +10,9 @@
 
 }
 
-.promptmobile{
+.promptmobile {
     position: relative;
-    font-family: Avenir LT Std, 'Lato', sans-serif;
-    font-style: normal;
+    font-family: var(--Avenir-Next);
     font-weight: bold;
     font-size: 1.5em;
     line-height: 100%;
@@ -25,11 +22,9 @@
     color: #FFFFFF;
 }
 
-.switchmobile{
+.switchmobile {
     position: relative;
-    font-family: McLaren;
-    font-style: normal;
-    font-weight: normal;
+    font-family: var(--McLaren);
     font-size: 1.125em;
     line-height: 105%;
     margin-left: auto;
@@ -44,7 +39,7 @@
 
 input.mobileinput{
     position: relative;
-    border-style:solid; 
+    border-style: solid; 
     font-size: 1.125em; 
     padding: .75em; 
     border-width: .125em;
@@ -56,9 +51,7 @@ input.mobileinput{
     top: 20vw;
     height: 1.25em;
 
-    font-family: McLaren;
-    font-style: normal;
-    font-weight: normal;
+    font-family: var(--McLaren);
     font-size: 1.125em;
     line-height: 2.25em;
 
@@ -73,9 +66,7 @@ input.mobileinput{
 }
 
 ::placeholder{
-    font-family: McLaren;
-    font-style: normal;
-    font-weight: normal;
+    font-family: var(--McLaren);
     font-size: 1.125em;
     line-height: 2.25em;
 
@@ -95,9 +86,7 @@ input.mobileinput{
 }
 
 .responsetext{
-    font-family: McLaren;
-    font-style: normal;
-    font-weight: normal;
+    font-family: var(--McLaren);
     font-size: 1.125em;
     line-height: 2.25em;
     text-align: center;

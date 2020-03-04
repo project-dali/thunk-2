@@ -1,6 +1,6 @@
 .system-status { 
     padding-top: 1.8rem;
-    font-family: 'Mclaren';
+    font-family: var(--McLaren);
 }
 .system-status>h3 { 
     font-size: 1.2rem;

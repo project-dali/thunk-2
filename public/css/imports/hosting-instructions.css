@@ -1,6 +1,6 @@
 .hosting-instructions { 
     text-align: center;
-    font-family: 'Mclaren';
+    font-family: var(--McLaren);
     font-size: 1.2rem;
 }
 

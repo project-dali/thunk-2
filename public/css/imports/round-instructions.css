@@ -4,7 +4,7 @@
 	height: 4rem;
 	left: 4rem;
 	top: 4.875rem;
-	font-family: Avenir Next, 'Lato', sans-serif;
+	font-family: var(--Avenir-Next);
 	font-weight: bold;
 	font-size: 2rem;
 	line-height: 2rem;
@@ -28,7 +28,7 @@
 	height: 1.4rem;
 	left: 1.5rem;
 	top: 1rem;
-	font-family: Avenir Next, 'Lato', sans-serif;
+	font-family: var(--Avenir-Next);
 	font-weight: bold;
 	font-size: 1.25rem;
 	line-height: 1.375rem;
@@ -53,9 +53,7 @@
 }
 
 ol>li { 
-	font-family: McLaren;
-	font-style: normal;
-	font-weight: normal;
+	font-family: var(--McLaren);
 	font-size: 1.25rem;
 	line-height: 1.325rem;
 	color: #F1F1F1;
@@ -68,8 +66,7 @@ ol>li {
 	width: 15rem;
 	background: var(--thunk-pink);
 	border-radius: 4.2rem;
-	font-family: McLaren;
-	font-weight: normal;
+	font-family: var(--McLaren);
 	font-size: 1.25rem;
 	line-height: 1.75rem;
 	text-align: center;

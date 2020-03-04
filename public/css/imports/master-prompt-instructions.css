@@ -1,6 +1,5 @@
 .instructionheader{
-    font-family: Avenir LT Std, 'Lato', sans-serif;
-    font-style: normal;
+    font-family: var(--Avenir-Next);
     font-weight: bold;
     font-size: 3em;
     line-height: 125%;
@@ -10,7 +9,7 @@
     margin-right: auto;
     top: 11.75em;
 
-    color: #ED1B69;
+    color: var(--thunk-pink);
 
 }
 
@@ -20,9 +19,7 @@
     text-align: center;
         top: 12.5em;
         position: relative;
-    font-family: McLaren;
-    font-style: normal;
-    font-weight: normal;
+    font-family: var(--McLaren);
     font-size: 2.25em;
     line-height: 2.9em;
 
@@ -48,8 +45,7 @@
 }
 
 p.prompttext1{
-    font-family: Avenir LT Std, 'Lato', sans-serif;
-    font-style: normal;
+    font-family: var(--Avenir-Next);
     font-weight: bold;
     font-size: 4em;
     line-height: 125%;
@@ -75,8 +71,7 @@ p.prompttext1{
 }
 
 p.buttext{
-    font-family: Avenir LT Std, 'Lato', sans-serif;
-    font-style: normal;
+    font-family: var(--Avenir-Next);
     font-weight: bold;
     font-size: 1.5em;
     line-height: 125%;
@@ -104,8 +99,7 @@ p.buttext{
 }
 
 p.prompttext2{
-    font-family: Avenir LT Std, 'Lato', sans-serif;
-    font-style: normal;
+    font-family: var(--Avenir-Next);
     font-weight: bold;
     font-size: 2.25em;
     line-height: 5em;

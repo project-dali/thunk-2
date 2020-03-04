@@ -20,9 +20,7 @@
     text-align:center;
     padding-top: 1.375em;
     display:block;
-    font-family: McLaren;
-    font-style: normal;
-    font-weight: normal;
+    font-family: var(--McLaren);
     font-size: 1.125em;
     line-height: 1.375em;
     height: 100%;
