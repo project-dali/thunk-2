@@ -165,14 +165,19 @@
 
 	<!-- This scrreen appears for players to enter ploys -->
 	<script id="ploy-template" type="text/template">
-        <div class="joinGameWrapper">
+        <div class="response-composer-wrapper">
+			
+			<section class="primary" id="wordArea">
+				<h3 id="hostWord"></h3>
+				<div id="playersAnswersArea"></div>
+			</section>
+
             <div class="info">
-                <label for="inputPloy">Your ploy:</label>
-                <input id="inputPloy" type="text" />
+                <input id="inputPloy" type="text" placeholder="Type your responses here" />
             </div>
 
             <div class="info buttons">
-                <button id="btnSendPloy" class="btn">Validate</button>
+                <button id="btnSendPloy" class="btn">Validate (dev btn)</button>
                 <div id="playerWaitingMessage"></div>
             </div>
         </div>
@@ -249,6 +254,10 @@
 					<!-- otherwise it may be "round 3 scores", "player 4 wins", "final scores" -->
 				</div>
 			</header>    
+
+			<section class="primary">
+				<div id="avatar-jumbo"></div>
+			</section>
 			
 			<section role="status" class="system-status">
 				<!-- non-interactive system feedback -->
@@ -257,7 +266,7 @@
 				</div>
 				<div class="room-code-display">
 					<p>Room</p>
-					<p class="room-number">123456</p>
+					<p class="room-number" id="gameId-corner">123456</p>
 				</div>
 			</section>
         </div>

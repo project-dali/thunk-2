@@ -832,6 +832,13 @@ jQuery(function ($) {
 
 					$('#gameArea').html(App.$waitScreenTemplate);
 
+					$('#avatar-jumbo').append(function () {
+						return `<div id="player-${App.Player.myAvatar.id}" class="player">
+							<span class="pl-avi" data-avatar-id="${App.Player.myAvatar.id}"></span>
+							<p class="pl-name">${App.Player.myName}</p>
+						</div>`;
+					});
+
 					IO.socket.emit('playerSelectNameAvatar', { playerId: App.mySocketId, playerName: App.Player.myName, avatarId: App.Player.myAvatar.id });
 				} else {
 					IO.socket.emit('throwError', 'Please select an avatar.');
@@ -946,6 +953,12 @@ jQuery(function ($) {
              */
 			newQuestion: function (data) {
 				$('#gameArea').html(App.$ployTemplate);
+
+				// Insert the new word into the DOM
+				$('#hostWord').text(data.question);
+				if (typeof data.switchup !== 'undefined') {
+					$('#hostSwitchUp').text(data.switchup);
+				}
 			},
 
 			/**
