@@ -40,7 +40,7 @@
     margin-right: auto;
     margin-top: 18.75em;
 
-    background: #ED1D69;
+    background: var(--thunk-pink);
     border-radius: 1.56em 5.5em 5.81em 7.5em;
     height: 17em;
     width: 47em;
@@ -69,7 +69,7 @@ p.prompttext1{
     margin-left: auto;
     margin-right: auto;
     margin-top: -3.23em;
-    background: #82287E;
+    background: var(--thunk-purple);
     border-radius: .69em;
     z-index: 20;
 }
@@ -96,7 +96,7 @@ p.buttext{
     margin-right: auto;
     margin-top: 1.56em;
     transform: scaleX(-1);
-    background: #ED1D69;
+    background: var(--thunk-pink);
     border-radius: 1.563em 3.125em 4.69em 5.375em;
     height: 11.49em;
     width: 29.85em;

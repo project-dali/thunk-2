@@ -16,7 +16,7 @@ button {
     height: 2.6em;
     background: var(--thunk-pink);
     border-radius: 4.2em;
-    box-shadow: 0 .25em .25em rgba(0, 0, 0, 0.25);
+    box-shadow: var(--drop-shadow);
 
     font-size: 1.125em;
     }
@@ -28,6 +28,6 @@ button:hover, button:active, button:focus {
 /* unfilled button style */
 button:disabled, button[disabled] {
     background: none;
-    border: .2em solid #A65875;
+    border: 3px solid var(--muted-purple);
     cursor: default;
 }

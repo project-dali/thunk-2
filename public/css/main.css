@@ -57,11 +57,15 @@
     --pl-lime: #DAEB70;
     --pl-violet: #6F4FED; */
     --thunk-pink: #ED1968;
+    --thunk-pink-transparent: rgba(237, 29, 105, 0.3);
     --thunk-dark-pink: #4F0021;
     --pink-gradient: linear-gradient(180deg, var(--thunk-pink) 0%, var(--thunk-dark-pink) 100%);
-    --thunk-purple: #201F5C;
-    --thunk-dark-purple: #0F1234;
+    --thunk-purple: #82287E;
+    --background-purple: #201F5C;
+    --background-dark-purple: #0F1234;
+    --purple-gradient: linear-gradient(180deg, var(--background-purple) 0%, var(--background-dark-purple) 100%)
     --muted-purpe: #A65875;
+    --drop-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 html {

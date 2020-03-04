@@ -87,7 +87,7 @@ input.mobileinput{
 .sendmobile{
     width: 20.25em;
     height: 3.125em;
-    border: .125em solid #A65875;
+    border: .125em solid var(--muted-purple);
     box-sizing: border-box;
     border-radius: .75em;
     width: 86vw;

@@ -8,7 +8,7 @@
     width: 15.625rem;
     height: 4.375rem;
 
-    background: #90278E;
+    background: var(--thunk-purple);
     transform-origin: bottom left;
     transition: all 1s ease-in-out;
 }
