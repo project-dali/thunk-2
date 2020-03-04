@@ -122,7 +122,6 @@ function hostPrepareGame(data) {
 		});
 	};
 
-	// change to 6 when adding to production
 	getPrompt(numRounds).then((results) => {
 		questions = [];
 
@@ -156,9 +155,7 @@ function hostPrepareGame(data) {
 		});
 	};
 
-	getSwitchUp(numRounds-1).then((results) => {
-		console.log(results);
-
+	getSwitchUp(numRounds - 1).then((results) => {
 		switchups = [];
 
 		for (let textRow of results) {
@@ -166,8 +163,6 @@ function hostPrepareGame(data) {
 				switchup: textRow.switch_up
 			});
 		}
-
-		console.log(switchups);
 
 		io.sockets.in(data.gameId).emit('beginNewGame', data);
 	});
@@ -334,8 +329,8 @@ function sendQuestion(wordPoolIndex, gameId) {
 	var json = questions[wordPoolIndex];
 	json.answer = json.solution;
 	json.round = wordPoolIndex;
-	if(wordPoolIndex > 0) {
-		json.switchup = switchups[wordPoolIndex-1].switchup;
+	if (wordPoolIndex > 0) {
+		json.switchup = switchups[wordPoolIndex - 1].switchup;
 	}
 	io.sockets.in(gameId).emit('newQuestion', json);
 }

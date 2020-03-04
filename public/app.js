@@ -254,7 +254,6 @@ jQuery(function ($) {
          */
 		showInitScreen: function () {
 			App.$gameArea.html(App.$templateIntroScreen);
-			App.doTextFit('.title');
 		},
 
 
@@ -323,7 +322,6 @@ jQuery(function ($) {
 				// Display the URL on screen
 				$('#gameURL').text(window.location.href);
 				$('#gameURL').attr('href', window.location.href);
-				//App.doTextFit('#gameURL');
 
 				// put space halfway through gameId
 				let gameIdDisplay = String(App.gameId).slice(0, 3) + ' ' + String(App.gameId).slice(3);
@@ -357,10 +355,14 @@ jQuery(function ($) {
 				App.Host.players[data.playerId].playerName = data.playerName;
 				App.Host.players[data.playerId].avatarId = data.avatarId;
 
-				// Update host screen
-				$('#playersWaiting')
-					.append('<p/>')
-					.text('Player ' + data.playerName + ' joined the game.');
+				// display newly joined players on host
+				$('#connected-players')
+					.append(function () {
+						return `<div id="player-${data.playerId}" class="player">
+							<span class="pl-avi" data-avatar-id="${data.avatarId}"></span>
+							<p class="pl-name">${data.playerName}</p>
+						</div>`;
+					});
 			},
 
 			launchGame: function (data) {
@@ -374,7 +376,6 @@ jQuery(function ($) {
 
 				// Prepare the game screen with new HTML
 				App.$gameArea.html(App.$hostGame);
-				App.doTextFit('#hostWord');
 
 				// Begin the on-screen countdown timer
 				var $secondsLeft = $('#hostWord');
@@ -402,18 +403,16 @@ jQuery(function ($) {
              */
 			newQuestion: function (data) {
 				App.$gameArea.html(App.$hostGame);
-				if(data.round >= 1) {
+				if (data.round >= 1) {
 					$('#promptBut').css('display', 'block');
 					$('#hostSwitchUp').css('display', 'block');
 				}
 				// Insert the new word into the DOM
 				$('#hostWord').text(data.question);
-				App.doTextFit('#hostWord');
-				if(typeof data.switchup !== 'undefined') {
+				if (typeof data.switchup !== 'undefined') {
 					$('#hostSwitchUp').text(data.switchup);
-					App.doTextFit('#hostSwitchUp');	
 				}
-				
+
 				$('#playersAnswersArea').empty();
 
 				// Update the data for the current round
@@ -457,7 +456,7 @@ jQuery(function ($) {
 							round: App.currentRound
 						};
 
-						if(App.currentRound < Config.numRounds) {
+						if (App.currentRound < Config.numRounds) {
 							setTimeout(function () {
 								App.Host.displayRoundStandings(data);
 							}, Config.answerDisplayCountdownDuration * 1000);
@@ -466,7 +465,7 @@ jQuery(function ($) {
 								$('.single-player-standing').remove();
 								IO.socket.emit('hostNextRound', data);
 							}, Config.answerDisplayCountdownDuration * 1000);
-						}					
+						}
 					}
 				}
 			},
@@ -486,14 +485,14 @@ jQuery(function ($) {
 				}
 
 				// Sort the array by every object's playerScore, in descending order.
-				sortablePlayersList.sort(function(a, b) {
+				sortablePlayersList.sort(function (a, b) {
 					return b[1].playerScore - a[1].playerScore;
 				});
 
 				// Remake the playersList object using the values from the now-sorted array.
 				playersList = {};
-				sortablePlayersList.forEach(function(item){
-					playersList[item[0]]=item[1];
+				sortablePlayersList.forEach(function (item) {
+					playersList[item[0]] = item[1];
 				});
 
 				// Append each of the players to the OL for Standings.
@@ -644,8 +643,6 @@ jQuery(function ($) {
 				else
 					nbColumns = 4;
 				$('#playersAnswersArea').css('grid-template-columns', '1fr '.repeat(nbColumns));
-
-				App.doTextFit('#hostWord');
 			},
 
 			/**
@@ -683,7 +680,7 @@ jQuery(function ($) {
 				}
 
 				// After 10 seconds, move on to the Game Standings screen
-				setTimeout(function(){
+				setTimeout(function () {
 					App.Host.gameStandings();
 				}, Config.answerDisplayCountdownDuration * 1000);
 			},
@@ -703,14 +700,14 @@ jQuery(function ($) {
 				}
 
 				// Sort the array by every object's playerScore, in descending order.
-				sortablePlayersList.sort(function(a, b) {
+				sortablePlayersList.sort(function (a, b) {
 					return b[1].playerScore - a[1].playerScore;
 				});
 
 				// Remake the playersList object using the values from the now-sorted array.
 				playersList = {};
-				sortablePlayersList.forEach(function(item){
-					playersList[item[0]]=item[1];
+				sortablePlayersList.forEach(function (item) {
+					playersList[item[0]] = item[1];
 				});
 
 				// Append each of the players to the OL for Standings.
@@ -719,7 +716,7 @@ jQuery(function ($) {
 				});
 
 				// After 10 seconds, move on to the credits screen
-				setTimeout(function(){
+				setTimeout(function () {
 					$('#gameArea').html(App.$creditsTemplate);
 				}, Config.answerDisplayCountdownDuration * 1000);
 
@@ -833,13 +830,7 @@ jQuery(function ($) {
 					let playerAvatar = $('input[name=avatar]:checked', '#inputPlayerAvatar').val();
 					App.Player.myAvatar.id = playerAvatar;
 
-					$('#btnPlayerLaunchGame').css('display', 'inline-block');
-					$('#btnAvatarSelect').css('display', 'none');
-					$('#inputPlayerAvatar').css('display', 'none');
-
-					$('#playerWaitingMessage')
-						.append('<p/>')
-						.text('Joined Game ' + App.gameId + '. Please wait for game to begin.');
+					$('#gameArea').html(App.$waitScreenTemplate);
 
 					IO.socket.emit('playerSelectNameAvatar', { playerId: App.mySocketId, playerName: App.Player.myName, avatarId: App.Player.myAvatar.id });
 				} else {
@@ -1021,7 +1012,6 @@ jQuery(function ($) {
 
 			// Display the starting time on the screen.
 			$el.text(startTime);
-			App.doTextFit('#hostWord');
 
 			// console.log('Starting Countdown...');
 
@@ -1032,7 +1022,6 @@ jQuery(function ($) {
 			function countItDown() {
 				startTime -= 1;
 				$el.text(startTime);
-				App.doTextFit('#hostWord');
 
 				if (startTime <= 0) {
 					// console.log('Countdown Finished.');

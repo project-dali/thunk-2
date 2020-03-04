@@ -17,7 +17,7 @@
 
 <body>
 	<div role="banner" class="banner">
-		<img src="css/imports/banner-01.png"/>
+		<img src="css/imports/banner-01.png" />
 		<!-- flowy background -->
 	</div>
 
@@ -56,18 +56,21 @@
 
 	<!-- This screen appears when a user clicks "CREATE" on the Title Screen -->
 	<script id="create-game-template" type="text/template">
-        <div class="createGameWrapper">
+		<div class="createGameWrapper">
 
 			<section class="primary">
-				<ul>
-					<li><div class="info">Go to <a id="gameURL">Error!</a> on your player device</div></li>
-					<li><div class="info">Click <strong>JOIN</strong> and <br/> enter the following Game ID:</div></li>			
-				</ul>
-				<div id="spanNewGameCode" class="gameId">Error!</div>
-				<div id="playersWaiting"></div>
+				<div id="code info" class="box-gray">
+					<h2>Code: <span id="spanNewGameCode" class="room-num gameId">123 456</span></h2>
+			  	</div>
+				<!-- as players join, they will appear here -->
+				<div id="connected-players"></div> 
+
+				<button id="btnPlayerLaunchGame" class="btn">Start</button>
+                <div id="playerWaitingMessage"></div>
 			</section>
 			
 			<section role="status" class="system-status">
+				<div class="info">Go to <a id="gameURL">Error!</a> on your player device</div>
 				<!-- non-interactive system feedback -->
 				<div class="closed-captions">
 					<!-- narration captions -->
@@ -156,8 +159,6 @@
 
             <div class="info buttons">
                 <button id="btnAvatarSelect" class="btn">Select Avatar</button>
-                <button id="btnPlayerLaunchGame" class="btn" style="display: none;">Launch Game</button>
-                <div id="playerWaitingMessage"></div>
             </div>
         </div>
     </script>
@@ -179,13 +180,36 @@
 
 	<!-- This is the 'Host' screen. It displays the word for each player to match -->
 	<script id="host-game-template" type="text/template">
-        <div id="playerInfos"></div>
-        <div id="promptArea">
-            <div id="hostWord" class="hostPrompt">5</div>
-            <div id="promptBut">BUT</div>
-            <div id="hostSwitchUp" class="hostPrompt"></div>
-        </div>
-        <div id="playersAnswersArea"></div>
+		<header class="title">
+			<div id="playerInfos"></div>        
+			<!-- current page title or system prompt/feedback -->
+			<div class="brand-mark">
+				<!-- for use on landing and room join -->
+			</div>
+			<div class="game-title no-outline">
+				<!-- in the case of the pink box, this would be class="outline" -->
+				<h1>Please wait</h1>
+				<span class="subtitle"></span>
+				<!-- during a round the h1 would be a prompt, so content might be "TFOML" -->
+				<!-- otherwise it may be "round 3 scores", "player 4 wins", "final scores" -->
+			</div>
+		</header>
+
+		<section class="primary" id="wordArea">
+			<h3 id="hostWord"></h3>
+			<div id="playersAnswersArea"></div>
+		</section>
+		
+		<section role="status" class="system-status">
+			<!-- non-interactive system feedback -->
+			<div class="closed-captions">
+				<p>This is closed captioning.</p>
+			</div>
+			<div class="room-code-display">
+				<p>Room</p>
+				<p class="room-number">123456</p>
+			</div>
+		</section>
     </script>
 
 	<script id="player-answer-template" type="text/template">
@@ -211,10 +235,31 @@
 
 	<!-- Wait screen -->
 	<script id="wait-screen-template" type="text/template">
-        <div class="titleWrapper">
-            <div class="title">
-                Please wait
-            </div>
+        <div class="waitScreenWrapper">
+			<header class="title">
+				<!-- current page title or system prompt/feedback -->
+				<div class="brand-mark">
+					<!-- for use on landing and room join -->
+				</div>
+				<div class="game-title no-outline">
+					<!-- in the case of the pink box, this would be class="outline" -->
+					<h1>Please wait</h1>
+					<span class="subtitle"></span>
+					<!-- during a round the h1 would be a prompt, so content might be "TFOML" -->
+					<!-- otherwise it may be "round 3 scores", "player 4 wins", "final scores" -->
+				</div>
+			</header>    
+			
+			<section role="status" class="system-status">
+				<!-- non-interactive system feedback -->
+				<div class="closed-captions">
+					<p>This is closed captioning.</p>
+				</div>
+				<div class="room-code-display">
+					<p>Room</p>
+					<p class="room-number">123456</p>
+				</div>
+			</section>
         </div>
     </script>
 
