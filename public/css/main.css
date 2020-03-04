@@ -1,32 +1,39 @@
-/* @font-face {
-    font-family: "Avenir Next";
-    src: url("static/fonts/AvenirNextLTPro-Regular.woff2"),
-         url("static/fonts/AvenirNextLTPro-Regular.woff");
-    font-weight: 400;
-} */
 
 /* @font-face {
-    font-family: "Avenir Next";
-    src: url("fonts/AvenirNextLTPro-Bold.woff2"),
-         url("fonts/AvenirNextLTPro-Bold.woff");
-    font-weight: bold;
-} */
-
-/*  How to import all CSS files:  */
-/* @import url("imports/**.css"); */
-@import url("imports/debug-nav.css");
-@import url("imports/background.css");
-@import url("imports/banner.css");
-@import url("imports/footer.css");
-@import url("imports/buttons.css");
-@import url("imports/timers.css");
-@import url("imports/system-status.css");
-@import url("imports/hosting-instructions.css");
-@import url("imports/closed-captions.css");
-@import url("imports/pl-round-instructions.css");
-@import url("imports/join.css");
-@import url("imports/ranking.css");
-
+    font-family: 'WorkSansBold';
+    src: url("../fonts/worksans-bold-webfont.woff2") format("woff2"),
+      url("../fonts/worksans-bold-webfont.woff") format("woff");
+    } */
+    
+    
+    /*  How to import all CSS files:  */
+    /* @import url("imports/**.css"); */
+    @import url("imports/debug-nav.css");
+    @import url("imports/background.css");
+    @import url("imports/banner.css");
+    @import url("imports/footer.css");
+    @import url("imports/buttons.css");
+    @import url("imports/timers.css");
+    @import url("imports/system-status.css");
+    @import url("imports/hosting-instructions.css");
+    @import url("imports/closed-captions.css");
+    @import url("imports/pl-round-instructions.css");
+    @import url("imports/join.css");
+    @import url("imports/ranking.css");
+    
+    @font-face {
+        font-family: "Avenir Next";
+        src: url("../fonts/AvenirNextLTPro-Regular.woff2") format("woff2"),
+             url("../fonts/AvenirNextLTPro-Regular.woff") format("woff");
+        font-weight: 400;
+    }
+    
+    @font-face {
+        font-family: "Avenir Next";
+        src: url("../fonts/AvenirNextLTPro-Bold.woff2") format("woff2"),
+             url("../fonts/AvenirNextLTPro-Bold.woff") format("woff");
+        font-weight: bold;
+    }
 * {
     margin: 0;
     padding: 0;
@@ -37,6 +44,10 @@
     font-weight: normal;
     font-size: 22px;
     color: #F1F1F1;
+}
+
+* {
+    font-family: 'Avenir Next' !important;
 }
 
 :root {
