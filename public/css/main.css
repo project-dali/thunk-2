@@ -1,39 +1,33 @@
 
-/* @font-face {
-    font-family: 'WorkSansBold';
-    src: url("../fonts/worksans-bold-webfont.woff2") format("woff2"),
-      url("../fonts/worksans-bold-webfont.woff") format("woff");
-    } */
-    
-    
-    /*  How to import all CSS files:  */
-    /* @import url("imports/**.css"); */
-    @import url("imports/debug-nav.css");
-    @import url("imports/background.css");
-    @import url("imports/banner.css");
-    @import url("imports/footer.css");
-    @import url("imports/buttons.css");
-    @import url("imports/timers.css");
-    @import url("imports/system-status.css");
-    @import url("imports/hosting-instructions.css");
-    @import url("imports/closed-captions.css");
-    @import url("imports/pl-round-instructions.css");
-    @import url("imports/join.css");
-    @import url("imports/ranking.css");
-    
-    @font-face {
-        font-family: "Avenir Next";
-        src: url("../fonts/AvenirNextLTPro-Regular.woff2") format("woff2"),
-             url("../fonts/AvenirNextLTPro-Regular.woff") format("woff");
-        font-weight: 400;
-    }
-    
-    @font-face {
-        font-family: "Avenir Next";
-        src: url("../fonts/AvenirNextLTPro-Bold.woff2") format("woff2"),
-             url("../fonts/AvenirNextLTPro-Bold.woff") format("woff");
-        font-weight: bold;
-    }
+/*  How to import all CSS files:  */
+/* @import url("imports/**.css"); */
+@import url("imports/debug-nav.css");
+@import url("imports/background.css");
+@import url("imports/banner.css");
+@import url("imports/footer.css");
+@import url("imports/buttons.css");
+@import url("imports/timers.css");
+@import url("imports/system-status.css");
+@import url("imports/hosting-instructions.css");
+@import url("imports/closed-captions.css");
+@import url("imports/pl-round-instructions.css");
+@import url("imports/join.css");
+@import url("imports/ranking.css");
+
+@font-face {
+    font-family: "Avenir Next";
+    src: url("../fonts/AvenirNextLTPro-Regular.woff2") format("woff2"),
+            url("../fonts/AvenirNextLTPro-Regular.woff") format("woff");
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "Avenir Next";
+    src: url("../fonts/AvenirNextLTPro-Bold.woff2") format("woff2"),
+            url("../fonts/AvenirNextLTPro-Bold.woff") format("woff");
+    font-weight: bold;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -46,15 +40,11 @@
     color: #F1F1F1;
 }
 
-* {
-    font-family: 'Avenir Next' !important;
-}
-
 :root {
     --gray-bg-color: #F1F1F1;
     --gray-bg-hover: #c2c2c2;
     --dark-gray: #333;
-    --pl-red: #EB5757;
+    /* --pl-red: #EB5757;
     --pl-orange: #F2994A;
     --pl-yellow: #F2C94C;
     --pl-green: #219653;
@@ -65,21 +55,25 @@
     --pl-magenta: #F25AF5;
     --pl-teal: #62EDE5;
     --pl-lime: #DAEB70;
-    --pl-violet: #6F4FED;
+    --pl-violet: #6F4FED; */
     --thunk-pink: #ED1968;
+    --thunk-dark-pink: #4F0021;
+    --pink-gradient: linear-gradient(180deg, var(--thunk-pink) 0%, var(--thunk-dark-pink) 100%);
+    --thunk-purple: #201F5C;
+    --thunk-dark-purple: #0F1234;
+    --muted-purpe: #A65875;
 }
 
 html {
     font-size: 100%;
     /* Set font size to user preference */
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Avenir Next', Arial, Helvetica, sans-serif;
     /* Websafe */
 }
 
 body {
     width: 100%;
     height: auto;
-    /* background-color: #fff; */
 }
 
 h1,
@@ -133,11 +127,11 @@ main {
     position: relative;
 }
 
-button {
+/*button {
     max-width: 20rem;
-    /*! height: 5rem; */
+    /~! height: 5rem; ~/
 
-    /* clear defaults */
+    /~ clear defaults ~/
     background: none;
     box-shadow: none;
     border: none;
@@ -167,7 +161,7 @@ button:focus {
 
 button:focus {
     outline: 5px solid var(--thunk-pink);
-}
+}*/
 
 .landing-instructions {
     text-align: center;
