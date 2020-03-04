@@ -9,3 +9,10 @@
 .system-status>h3>b { 
     color: var(--thunk-pink); 
 }
+
+#playerWaitingMessage {
+    color: #fff;
+    font-family: var(--McLaren);
+    font-size: 1.25em;
+    text-align: center;
+}

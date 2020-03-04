@@ -10,18 +10,13 @@
 	color: #FFFFFF;
 }
 
-.subtitle { 
-	position: absolute;
-	left: 1rem;
-	right: 2rem;
-	top: 15rem;
+.subtitle {
 	width: 100%;
 	font-family: var(--McLaren);
-	font-style: normal;
-	font-weight: normal;
-	font-size: 1.25rem;
+	font-size: 1.5rem;
 	text-align: center;
 	color: #FFFFFF;
+	font-weight: normal;
 }
 
 #room-code { 
@@ -35,4 +30,44 @@
 	box-sizing: border-box;
 	border-radius: 3.2rem;
 	background-color: transparent;
+}
+
+#inputGameId, #inputPlayerName {
+  width: 100%;
+  display: block;
+  height: 4rem;
+  background: none;
+  border: none;
+  border: 3px solid #fff;
+  border-radius: 4rem;
+  text-align: center;
+  font-size: 2.5rem;
+  color: #fff;
+	margin: 1rem auto 2rem;
+	font-family: var(--Avenir-Next);
+	font-weight: bold;
+  outline: none;
+}
+
+/* Hide up-down option */
+/* Chrome, Safari, Edge, Opera */
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button
+{
+  -webkit-appearance: none;
+  margin: 0;
+}
+/* Firefox */
+input[type=number] {
+  -moz-appearance:textfield;
+}
+
+label[for*="inputGameId"], label[htmlfor*="inputGameId"],
+label[for*="inputPlayerName"], label[htmlfor*="inputPlayerName"] {
+	font-size: 1.5rem;
+	font-family: var(--McLaren);
+	color: #fff;
+	text-align: center;
+	width: 100%;
+	display: block;
 }
