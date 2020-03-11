@@ -307,6 +307,8 @@ jQuery(function ($) {
 				App.myRole = 'Host';
 				App.Host.numPlayersInRoom = 0;
 
+				$('#gameArea').addClass('host');
+
 				App.Host.displayNewGameScreen();
 				// console.log("Game started with ID: " + App.gameId + ' by host: ' + App.mySocketId);
 			},
@@ -799,6 +801,8 @@ jQuery(function ($) {
 				};
 
 				App.myRole = 'Player';
+
+				$('#gameArea').addClass('pl');
 
 				// Send the gameId and playerName to the server
 				IO.socket.emit('playerJoinGame', data);

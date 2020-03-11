@@ -168,11 +168,27 @@ main {
   font-family: var(--Gilbert);
 }
 
+.pl .closed-captions {
+	display: none;
+}
+
+.closed-captions {
+    position: absolute;
+    top: 100vh; left: 50vw;
+    transform: translateY(-100%) translateX(-50%);
+    margin: 0 auto;
+    max-width: 60%;
+}
+
 .switch-up p {
   text-align: center;
   font-weight: bold;
   font-size: 3rem;
   margin: 2rem 0;
+}
+
+.pl .room-code-display{
+	display: none;
 }
 
 .room-code-display {
