@@ -27,8 +27,8 @@ app.configure(function () {
 	app.use(express.static(path.join(__dirname, 'public')));
 });
 
-// Create a Node.js based http server on port 8080
-const server = require('http').createServer(app).listen(process.env.PORT || 8080);
+// Create a Node.js based http server on port 3000
+const server = require('http').createServer(app).listen(process.env.PORT || 3000);
 
 // Create a Socket.IO server and attach it to the http server
 const io = require('socket.io').listen(server);

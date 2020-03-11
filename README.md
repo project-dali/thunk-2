@@ -9,7 +9,7 @@ Thunk is a game that inspires creativity, through quick thinking and clever limi
 ## Usage
 
 1. If testing locally, start application from root of repository `npm start`
-1. If testing locally, connect to localhost:8080, if using in production, connect to [thunk.fun](https://thunk.fun)
+1. If testing locally, connect to localhost:3000, if using in production, connect to [thunk.fun](https://thunk.fun)
 1. Click Create, to start a new game
 1. Click Join, to enter an existing game, then input the data we need to steal from you
 
@@ -63,7 +63,7 @@ To test on local, navigate to the root directory of the app and run:
 
     npm start
 
-The app will be available on [localhost:8080](http://localhost:8080).
+The app will be available on [localhost:3000](http://localhost:3000).
 
 ## Deploy 
 
