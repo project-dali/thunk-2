@@ -1,4 +1,4 @@
-/* global io, FastClick, textFit */
+/* global io, FastClick */
 
 jQuery(function ($) {
 	'use strict';
@@ -307,6 +307,8 @@ jQuery(function ($) {
 				App.myRole = 'Host';
 				App.Host.numPlayersInRoom = 0;
 
+				$('#gameArea').addClass('host');
+
 				App.Host.displayNewGameScreen();
 				// console.log("Game started with ID: " + App.gameId + ' by host: ' + App.mySocketId);
 			},
@@ -359,7 +361,9 @@ jQuery(function ($) {
 				$('#connected-players')
 					.append(function () {
 						return `<div id="player-${data.playerId}" class="player">
-							<span class="pl-avi" data-avatar-id="${data.avatarId}"></span>
+							<span class="pl-avi" data-avatar-id="${data.avatarId}">
+							<img src="avatar-static/avatar-${data.avatarId}.png">
+							</span>
 							<p class="pl-name">${data.playerName}</p>
 						</div>`;
 					});
@@ -798,6 +802,8 @@ jQuery(function ($) {
 
 				App.myRole = 'Player';
 
+				$('#gameArea').addClass('pl');
+
 				// Send the gameId and playerName to the server
 				IO.socket.emit('playerJoinGame', data);
 			},
@@ -813,7 +819,11 @@ jQuery(function ($) {
 					// generate avatar buttons from Avatar List
 					for (let avatar of App.avatarList) {
 						$('#inputPlayerAvatar').append(function () {
-							return `<div class="form-control"><label for="${avatar.id}">${avatar.name}</label><input type="radio" name="avatar" id="${avatar.id}" value="${avatar.id}"></div>`;
+							return `<label for="${avatar.id}">								
+								<input type="radio" name="avatar" id="${avatar.id}" value="${avatar.id}">
+								<span class="avi"><img src="avatar-static/avatar-${avatar.id}.png"></span>
+								<span class="name">${avatar.name}</span>
+							</label>`;
 						});
 					}
 
@@ -834,7 +844,9 @@ jQuery(function ($) {
 
 					$('#avatar-jumbo').append(function () {
 						return `<div id="player-${App.Player.myAvatar.id}" class="player">
-							<span class="pl-avi" data-avatar-id="${App.Player.myAvatar.id}"></span>
+							<span class="pl-avi" data-avatar-id="${App.Player.myAvatar.id}">
+							<img src="avatar-static/avatar-${App.Player.myAvatar.id}.png">
+							</span>
 							<p class="pl-name">${App.Player.myName}</p>
 						</div>`;
 					});
@@ -1047,21 +1059,6 @@ jQuery(function ($) {
 			}
 
 		},
-
-		/**
-         * Make the text inside the given element as big as possible
-         * See: https://github.com/STRML/textFit
-         *
-         * @param el The parent element of some text
-         */
-		doTextFit: function (el) {
-			textFit($(el)[0], {
-				minFontSize: 10,
-				maxFontSize: 200,
-				alignVert: true,
-				multiLine: true
-			});
-		}
 	};
 
 	fetch('/config.json').then(data => data.json()).then(json => {
