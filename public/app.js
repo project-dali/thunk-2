@@ -819,7 +819,7 @@ jQuery(function ($) {
 					// generate avatar buttons from Avatar List
 					for (let avatar of App.avatarList) {
 						$('#inputPlayerAvatar').append(function () {
-							return `<label for="${avatar.id}">								
+							return `<label class="avi-container" for="${avatar.id}">								
 								<input type="radio" name="avatar" id="${avatar.id}" value="${avatar.id}">
 								<span class="avi"><img src="avatar-static/avatar-${avatar.id}.png"></span>
 								<span class="name">${avatar.name}</span>
