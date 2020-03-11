@@ -394,6 +394,7 @@ input[type="submit"]:focus {
 .credits {
   animation: 40s linear 3s infinite credit-crawl;
   transform: translateY(100vh);
+  padding: 0 !important;
 }
 
 @keyframes credit-crawl {
@@ -467,7 +468,8 @@ input[type="text"]:invalid {
 
 @media screen and (max-width: 40rem) {
   main {
-    overflow-y: hidden;
+    /* overflow-y: hidden; */
+    overflow-x: hidden;
     position: relative;
   }
 
