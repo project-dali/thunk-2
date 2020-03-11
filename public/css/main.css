@@ -359,6 +359,7 @@ input[type="submit"]:focus {
 
 .credit-container .title {
   align-self: end;
+  margin-bottom: 0;
 }
 
 .credit-container .primary {
@@ -375,6 +376,11 @@ input[type="submit"]:focus {
   display: flex;
   align-items: center;
   flex-direction: column;
+  align-self: end;
+  grid-column: 2/3;
+  position: static;
+  align-self: start;
+  justify-self: center;
 }
 
 .credits {
