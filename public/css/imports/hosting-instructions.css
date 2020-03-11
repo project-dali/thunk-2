@@ -1,8 +1,9 @@
 .hosting-instructions { 
     text-align: center;
     font-family: var(--McLaren);
-    font-size: 2rem;
+    font-size: 2.25rem;
     list-style: none;
+    color: #fff;
 }
 
 .hosting-instructions>p>b { 
@@ -12,7 +13,10 @@
 #spanNewGameCode {
     text-align: center;
     margin-top: 2rem;
-    font-size: 8rem;
+    font-size: 9rem;
     font-weight: bold;
     color: #fff;
+}
+#btnPlayerLaunchGame {
+    margin-bottom: 2rem;
 }

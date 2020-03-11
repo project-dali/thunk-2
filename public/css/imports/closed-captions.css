@@ -14,6 +14,7 @@
     transform: translateY(-100%) translateX(-50%);
     margin: 0 auto;
     max-width: 60%;
+    display: none;
 }
 
 .closed-captions>h3 { 
