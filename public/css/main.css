@@ -94,7 +94,10 @@ html {
 
 body {
   width: 100%;
-  height: 100%;
+  height: auto;
+  /* background-color: #fff; */
+  z-index: -10;
+  position: relative;
 }
 
 h1,
@@ -366,17 +369,6 @@ input[type="submit"]:focus {
   height: var(--avatar-size);
   border-radius: 50%;
   background-color: var(--pl-green);
-}
-
-  form#inputPlayerAvatar {
-	display: grid;
-	grid-gap: 1.5rem;
-	grid-template-columns: 1fr 1fr;
-	justify-items: center;
-}
-
-form#inputPlayerAvatar label span.name{
-	display: block;
 }
 
 .score-standings {

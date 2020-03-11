@@ -1,13 +1,24 @@
-.avatars {
+form#inputPlayerAvatar {
 	display: grid;
-	grid-template-columns: repeat(3, 8rem);
-	margin: 0 auto;
-	justify-content: center;
-	grid-template-rows: repeat(4, 5rem);
-	margin-bottom: 2rem;
+	grid-gap: 1.5rem;
+	grid-template-columns: repeat(3, 1fr);
+	justify-items: center;
 }
 
-.form-control input[type=radio] {
+form#inputPlayerAvatar label span.name{
+	display: block;
+}
+
+/* Wrapper around each avatar and name */
+.avi-container {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  text-align: center;
+}
+
+/* Hide default radio button */
+.avi-container input {
   position: absolute;
   opacity: 0;
   cursor: pointer;
@@ -15,15 +26,41 @@
   width: 0;
 }
 
-.form-control {
-  display: flex;
-  flex-direction: column;
-  justify-content: end;
-  align-items: center;
+.avi {
+	position: relative;
+	display: inline-block;
+	transition: top .25s ease-in-out;
+	top: 0;
 }
 
-.form-control label {
-  color: #fff;
-  font-family: var(--McLaren);
-  font-size: 1.25em;
+/* Slight movement to indicate interaction */
+.avi-container:hover input ~ .avi {
+	top: -.75rem;
+}
+
+/* .avi-container input:checked ~ .avi {
+	background: red;
+} */
+
+/* Selection indication, hidden by default */
+.avi:after {
+	content: "";
+	position: absolute;
+	display: none;
+}
+
+/* Show selection indicator when checked */
+.avi-container input:checked ~ .avi:after {
+	display: block;
+}
+
+.avi-container .avi:after {
+	--marker-size: 6.5rem;
+	height: var(--marker-size);
+	width: var(--marker-size);
+	background:var(--thunk-pink);
+	top: -.75rem;
+	z-index: -1;
+	border-radius: 50%;
+	left: -.125rem;
 }
