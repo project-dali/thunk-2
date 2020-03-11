@@ -359,7 +359,9 @@ jQuery(function ($) {
 				$('#connected-players')
 					.append(function () {
 						return `<div id="player-${data.playerId}" class="player">
-							<span class="pl-avi" data-avatar-id="${data.avatarId}"></span>
+							<span class="pl-avi" data-avatar-id="${data.avatarId}">
+							<img src="avatar-static/avatar-${data.avatarId}.png">
+							</span>
 							<p class="pl-name">${data.playerName}</p>
 						</div>`;
 					});
@@ -834,7 +836,9 @@ jQuery(function ($) {
 
 					$('#avatar-jumbo').append(function () {
 						return `<div id="player-${App.Player.myAvatar.id}" class="player">
-							<span class="pl-avi" data-avatar-id="${App.Player.myAvatar.id}"></span>
+							<span class="pl-avi" data-avatar-id="${App.Player.myAvatar.id}">
+							<img src="avatar-static/avatar-${App.Player.myAvatar.id}.png">							
+							</span>
 							<p class="pl-name">${App.Player.myName}</p>
 						</div>`;
 					});

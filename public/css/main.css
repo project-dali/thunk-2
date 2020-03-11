@@ -347,41 +347,6 @@ input[type=submit]:hover, input[type=submit]:active, input[type=submit]:focus {
     border-radius: 50%;
 }
 
-/* ! Remove this once avatar selection feauture is created */
-#player-1>.pl-avi {
-    background-color: var(--pl-red, Red);
-}
-
-#player-2>.pl-avi {
-    background-color: var(--pl-orange, Orange);
-}
-
-#player-3>.pl-avi {
-    background-color: var(--pl-yellow, Yellow);
-}
-
-#player-4>.pl-avi {
-    background-color: var(--pl-green, Green);
-}
-
-#player-5>.pl-avi {
-    background-color: var(--pl-blue, Blue);
-}
-
-#player-6>.pl-avi {
-    background-color: var(--pl-mediumBlue, CornflowerBlue);
-}
-
-#player-7>.pl-avi {
-    background-color: var(--pl-lightGreen, LightGreen);
-}
-
-#player-8>.pl-avi {
-    background-color: var(--pl-purple, Purple);
-}
-
- /* ! -------------------------------------------------  */
-
 .pl-name {
     font-weight: bold;
 }
