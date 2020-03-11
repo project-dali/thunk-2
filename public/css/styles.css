@@ -239,12 +239,14 @@ html, body {
     display: flex;
     flex-direction: column;
     margin: var(--answer-button-margin);
+    list-style-type: none;
 }
 
 #ulAnswers li {
     flex-grow: 1;
     display: flex;
     flex-direction: column;
+    list-style-type: none;
 }
 
 .btnAnswer {
@@ -254,14 +256,17 @@ html, body {
     flex-grow: 1;
     padding: 0;
     border: 0;
+    list-style-type: none;
 }
 
 .btnAnswer:disabled {
     background-color: #598e39;
+    list-style-type: none;
 }
 
 li:not(:last-child) .btnAnswer {
     margin-bottom: var(--answer-button-margin);
+    list-style-type: none;
 }
 
 /* ******************************

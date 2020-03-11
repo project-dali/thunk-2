@@ -129,6 +129,7 @@ p,
 ul {
   font-family: var(--McLaren);
   color: #fff;
+  list-style-type: none;
 }
 
 a:link,

@@ -38,3 +38,12 @@ button:disabled, button[disabled] {
     border: 3px solid var(--muted-purple);
     cursor: default;
 }
+
+@media screen and (max-width: 40rem) {
+    #btnCreateGame{
+        width: 37.25vw;
+    }
+    #btnJoinGame{
+        width: 37.25vw;
+    }
+}
