@@ -466,6 +466,13 @@ input[type="text"]:invalid {
   outline: 4px solid var(--pl-red, red);
 }
 
+@media screen and (max-width: 64rem) {
+
+    #playersAnswersArea {
+        grid-template-columns: 1fr 1fr;
+      }
+}
+
 @media screen and (max-width: 40rem) {
   main {
     /* overflow-y: hidden; */
@@ -512,6 +519,10 @@ input[type="text"]:invalid {
     columns: 1;
     width: unset;
     color: #fff;
+  }
+
+  #playersAnswersArea {
+    grid-template-columns: 1fr;
   }
 }
 
@@ -646,7 +657,10 @@ input[type="text"]:invalid {
     padding: 10px;
     text-align: center;
     font-weight: 400;
+    grid-template-columns: 1fr 1fr 1fr;
 }
+
+
 
 #playersAnswersArea .playerAnswer {
     background-color: rgba(255, 255, 255, 0);
@@ -657,6 +671,9 @@ input[type="text"]:invalid {
 #playersAnswersArea .playerAnswer .answer {
     color: #fff;
     font-size: 2em;
+    background: var(--thunk-pink);
+    padding: 1rem;
+    border-radius: 50px;
 }
 
 #playersAnswersArea .playerAnswer .playersVotesArea {
