@@ -104,9 +104,17 @@ h4,
 h5,
 h6,
 p {
-  font-weight: bold;
   text-align: center;
   color: #fff;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{
+font-weight: bold;
 }
 
 h1 {
@@ -495,6 +503,7 @@ input[type="text"]:invalid {
   .score-standings {
     columns: 1;
     width: unset;
+    color: #fff;
   }
 }
 
@@ -581,4 +590,94 @@ input[type="text"]:invalid {
 
 .team-members {
   color: #000 !important;
+}
+
+/* Score Screens */
+.playerInfo {
+    padding: 0;
+    margin: 0;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 400;
+    display: flex;
+}
+
+.playerInfo:nth-child(odd) {
+    text-align: left;
+    flex-direction: row;
+}
+
+.playerInfo:nth-child(even) {
+    text-align: right;
+    flex-direction: row-reverse;
+}
+
+.playerInfo div {
+    font-size: 1.4EM;
+    padding: 10px;
+    margin: 0;
+}
+
+.playerInfo .playerScore {
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0);
+    max-width: 40px;
+    width: 10%;
+}
+
+.playerInfo .playerName {
+    background-color: #ECFFE0;
+    overflow: hidden;
+    flex-grow: 1;
+}
+
+#playersAnswersArea {
+    padding: 10px;
+    display: grid;
+    grid-gap: 10px;
+    font-family: 'Quicksand', sans-serif;
+    padding: 10px;
+    text-align: center;
+    font-weight: 400;
+}
+
+#playersAnswersArea .playerAnswer {
+    background-color: rgba(255, 255, 255, 0);
+    color: #fff;
+    border-radius: 3em;
+}
+
+#playersAnswersArea .playerAnswer .answer {
+    color: #fff;
+    font-size: 2em;
+}
+
+#playersAnswersArea .playerAnswer .playersVotesArea {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 4px;
+}
+
+#playersAnswersArea .playerAnswer .playersVotesArea .playerVote {
+    font-size: 1.5em;
+    padding-bottom: 4px;
+    display: flex;
+}
+
+#playersAnswersArea .playerAnswer .playersVotesArea .playerVote div {
+    padding: 4px;
+}
+
+#playersAnswersArea .playerAnswer .playersVotesArea .playerVote .playerName {
+    color: #fff;
+    background-color: var(--thunk-pink);
+}
+
+#playersAnswersArea .playerAnswer .playersVotesArea .playerVote .malus {
+    color: #fff;
+    background-color: var(--thunk-purple);
+}
+
+#playersAnswersArea .playerAnswer .playersVotesArea .playerVote .bonus {
+    color: #000000;
+    background-color: var(--gray-bg-color);
 }

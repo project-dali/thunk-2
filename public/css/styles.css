@@ -367,6 +367,8 @@ li:not(:last-child) .btnAnswer {
 
 #playersAnswersArea .playerAnswer {
     background-color: #8AD453;
+    color: #fff
+    ;
 }
 
 #playersAnswersArea .playerAnswer .answer {
