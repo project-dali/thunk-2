@@ -368,6 +368,77 @@ input[type="submit"]:focus {
   background-color: var(--pl-green);
 }
 
+  form#inputPlayerAvatar {
+	display: grid;
+	grid-gap: 1.5rem;
+	grid-template-columns: 1fr 1fr;
+	justify-items: center;
+}
+
+form#inputPlayerAvatar label span.name{
+	display: block;
+}
+
+.score-standings {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    columns: 2;
+    width: 40rem;
+    margin: 2rem auto 0;
+    grid-gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+ol {
+    list-style: none;
+    counter-reset: thunk-counter;
+}
+
+ol>li {
+    --counter-size: 1.75rem;
+    counter-increment: thunk-counter;
+    position: relative;
+    margin-left: calc(var(--counter-size) + .75rem);
+    min-height: var(--counter-size);
+    display: flex;
+    align-items: center;
+    margin-bottom: .5rem;
+}
+
+ol>li::before {
+    content: counter(thunk-counter);
+    color: #fff;
+    font-size: 1.25rem;
+    font-weight: bold;
+    position: absolute;
+    left: calc(-1 * var(--counter-size) - .75rem);
+    line-height: var(--counter-size);
+    width: var(--counter-size);
+    height: var(--counter-size);
+    top: calc(50% - var(--counter-size)/2);
+    background: rgba(237, 29, 105, 0.3);;
+    border-radius: 50%;
+    text-align: center;
+}
+
+.score-standings .player {
+    display: grid;
+    grid-template-columns: 5.25rem auto;
+    grid-template-rows: 2.25rem auto;
+    grid-template-areas:
+        "pl-avi pl-name"
+        "pl-avi pl-score";
+    width: 16rem;
+    grid-gap: 0.5rem;
+    align-items: unset;
+    margin-left: 0;
+}
+
+.score-standings .pl-avi {
+    grid-area: pl-avi;
+    margin-bottom: 0;
+}
+
 .player-answer,
 .hightlighted-player .player-name {
   font-weight: bold;
