@@ -1,6 +1,7 @@
 /*  How to import all CSS files:  */
 /* @import url("imports/**.css"); */
 @import url('https://fonts.googleapis.com/css?family=McLaren&display=swap');
+@import url("https://use.typekit.net/noh5ows.css");
 @import url("imports/overrides.css");
 @import url("imports/debug-nav.css");
 @import url("imports/background.css");
@@ -31,6 +32,7 @@
     font-weight: bold;
     font-style: normal;
 }
+
 
 * {
     margin: 0;
@@ -70,6 +72,7 @@
     /* Fonts */
     --Avenir-Next: 'Avenir Next', Arial, Helvetica, sans-serif;
     --McLaren: 'McLaren', Verdana, Geneva, sans-serif;
+    --Gilbert: 'gilbert', Verdana, Geneva, sans-serif
 
     --drop-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 
@@ -98,6 +101,7 @@ h1, h2, h3, h4, h5, h6, p {
 h1 {
     font-size: 6rem;
     text-align: center;
+    font-family: var(--Gilbert);
 }
 
 h2 {
@@ -144,11 +148,11 @@ main {
 }
 
 .room-code-display {
-    position: absolute;
+    position: fixed;
     height: 150px;
     width: 150px;
     top: 104vh;
-    right: 0;
+    right: -1em;
     transform: translateY(-100%);
     font-size: 1.5rem;
     font-weight: bold;
@@ -156,6 +160,10 @@ main {
     flex-direction: column;
     border-radius: 200px;
     background-color: var(--thunk-pink);
+}
+.room-code-display p{
+    position: relative;
+    top: 1em;
 }
 
 .round-progress-bar {
