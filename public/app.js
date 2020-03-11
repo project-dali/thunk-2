@@ -819,7 +819,11 @@ jQuery(function ($) {
 					// generate avatar buttons from Avatar List
 					for (let avatar of App.avatarList) {
 						$('#inputPlayerAvatar').append(function () {
-							return `<div class="form-control"><label for="${avatar.id}">${avatar.name}</label><input type="radio" name="avatar" id="${avatar.id}" value="${avatar.id}"></div>`;
+							return `<label for="${avatar.id}">								
+								<input type="radio" name="avatar" id="${avatar.id}" value="${avatar.id}">
+								<span class="avi"><img src="avatar-static/avatar-${avatar.id}.png"></span>
+								<span class="name">${avatar.name}</span>
+							</label>`;
 						});
 					}
 
@@ -841,7 +845,7 @@ jQuery(function ($) {
 					$('#avatar-jumbo').append(function () {
 						return `<div id="player-${App.Player.myAvatar.id}" class="player">
 							<span class="pl-avi" data-avatar-id="${App.Player.myAvatar.id}">
-							<img src="avatar-static/avatar-${App.Player.myAvatar.id}.png">							
+							<img src="avatar-static/avatar-${App.Player.myAvatar.id}.png">
 							</span>
 							<p class="pl-name">${App.Player.myName}</p>
 						</div>`;

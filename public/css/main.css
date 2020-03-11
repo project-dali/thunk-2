@@ -380,6 +380,17 @@ input[type=submit]:hover, input[type=submit]:active, input[type=submit]:focus {
     margin-top: 1rem;
 }
 
+form#inputPlayerAvatar {
+	display: grid;
+	grid-gap: 1.5rem;
+	grid-template-columns: 1fr 1fr;
+	justify-items: center;
+}
+
+form#inputPlayerAvatar label span.name{
+	display: block;
+}
+
 /*.score-standings {
     /~ display: grid;
     grid-template-columns: repeat(2, 1fr); ~/
