@@ -176,6 +176,10 @@ button:focus {
     width: 100%;
 }
 
+.pl .closed-captions {
+	display: none;
+}
+
 .closed-captions {
     position: absolute;
     top: 100vh; left: 50vw;
@@ -189,6 +193,10 @@ button:focus {
     font-weight: bold;
     font-size: 3rem;
     margin: 2rem 0;
+}
+
+.pl .room-code-display{
+	display: none;
 }
 
 .room-code-display {
