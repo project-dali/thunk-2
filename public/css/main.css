@@ -175,6 +175,10 @@ main {
 	display: none;
 }
 
+.pl .closed-captions {
+	display: none;
+}
+
 .closed-captions {
     position: absolute;
     top: 100vh; left: 50vw;
@@ -188,6 +192,10 @@ main {
   font-weight: bold;
   font-size: 3rem;
   margin: 2rem 0;
+}
+
+.pl .room-code-display{
+	display: none;
 }
 
 .pl .room-code-display{
