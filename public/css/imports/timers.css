@@ -1,23 +1,20 @@
-/* clip-path for shape of timer */
-.timer{
-    -webkit-clip-path: polygon(0 85%, 100% 63%, 100% 100%, 0% 100%);
-clip-path: polygon(0 85%, 100% 63%, 100% 100%, 0% 100%);
-
-position: relative;
-    margin-left: auto;
-margin-right: auto;
-width: 250px;
-height: 70px;
-
-
-
-background: #90278E;
-transform-origin: bottom left;
-transition: all 1s ease-in-out;
+.timer {
+    width: 43.75rem;
 }
 
-/* on mouse hold = example of time running out */
-.timer:active{
-    transform: scale(0,.5);
+@media screen and (max-width: 27.5rem) {
+    .timer {
+        width: 12.5rem;
+    }
+}
 
+/* on mouse hover = example of time running out */
+.timer:hover .timer-bar{
+    animation: timer-countdown 3s linear infinite;
+    /* animation: timer-countdown 3s linear 1s infinite forwards; */
+}
+
+@keyframes timer-countdown {
+    0% { transform: scaleX(100%); }
+    100% { transform: scaleX(0%); }
 }
