@@ -230,7 +230,6 @@ function playerJoinGame(data) {
 
 		// Join the room
 		sock.join(data.gameId);
-
 		//console.log('Player ' + data.playerName + ' joining game: ' + data.gameId );
 
 		// Emit an event notifying the clients that the player has joined the room.
