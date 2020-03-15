@@ -943,10 +943,15 @@ jQuery(function ($) {
 
 			/**
              * Display the waiting screen when waiting for other players
+			 * only update for the player who just joined
+			 * ideally this method should only be invoked by a socket event
+			 * sent directly to this client, but this is a quick fix
              * @param data
              */
 			updateWaitingScreen: function (data) {
-				App.Player.displayNicknameSelect(data);
+				if (data.playerId === App.mySocketId) {
+					App.Player.displayNicknameSelect(data);
+				}
 			},
 
 			/**
