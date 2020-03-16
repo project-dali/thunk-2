@@ -490,7 +490,7 @@ ol > li::before {
     transform: translateY(100vh);
   }
   to {
-    transform: translateY(-150vh);
+    transform: translateY(-305vh);
   }
 }
 
