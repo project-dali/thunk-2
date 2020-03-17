@@ -38,6 +38,7 @@
   padding: 0;
   box-sizing: border-box;
 }
+
 :root {
   /* --pl-red: #EB5757;
     --pl-orange: #F2994A;
@@ -165,6 +166,10 @@ main {
   align-items: center;
   padding-top: 3rem;
   position: relative;
+}
+
+main.host {
+  padding-top: 15rem;
 }
 
 .game-title {
@@ -351,18 +356,10 @@ input[type="submit"]:focus {
 }
 
 .pl-avi {
-  --avi-size: 5.25rem;
   content: "";
   display: block;
-  width: var(--avi-size);
-  height: var(--avi-size);
-  background-color: #000;
   margin-bottom: 0.25rem;
   border-radius: 50%;
-}
-
-.pl-name {
-  font-weight: bold;
 }
 
 .hightlighted-player {
@@ -777,4 +774,12 @@ input[type="text"]:invalid {
 #playersAnswersArea .playerAnswer .playersVotesArea .playerVote .bonus {
   color: #000000;
   background-color: var(--gray-bg-color);
+}
+
+.waitScreenWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
 }
