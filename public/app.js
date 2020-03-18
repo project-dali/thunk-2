@@ -686,7 +686,7 @@ jQuery(function ($) {
 				// After 10 seconds, move on to the Game Standings screen
 				setTimeout(function () {
 					App.Host.gameStandings();
-				}, Config.answerDisplayCountdownDuration * 1000);
+				}, Config.standingsCountdownDuration * 1000);
 			},
 
 			gameStandings: function () {
@@ -722,7 +722,7 @@ jQuery(function ($) {
 				// After 10 seconds, move on to the credits screen
 				setTimeout(function () {
 					$('#gameArea').html(App.$creditsTemplate);
-				}, Config.answerDisplayCountdownDuration * 1000);
+				}, Config.standingsCountdownDuration * 1000);
 
 				// Reset game data + visuals
 				App.Host.numPlayersInRoom = 0;
