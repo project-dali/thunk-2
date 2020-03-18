@@ -2,10 +2,11 @@
 	"nbPlayers": 2,
 	"pregameCountdownDuration": 5,
 	"answerDisplayCountdownDuration": 10,
+	"standingsCountdownDuration": 15,
 	"goodAnswer": 10,
 	"ployAnswer": 5,
 	"badAnswer": -3,
-	"numRounds": 1,
+	"numRounds": 3,
 	"languages": {
 		"en": {
 			"name": "English",
