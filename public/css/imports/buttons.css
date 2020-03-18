@@ -1,49 +1,63 @@
 button {
-    /* clear defaults */
-    background: none;
-    box-shadow: none;
-    border: none;
+  /* clear defaults */
+  background: none;
+  box-shadow: none;
+  border: none;
 
-    /* position: relative; */
+  /* position: relative; */
 
-    /* Change position of button */
-    margin-left: auto;
-    margin-right: auto;
-    /* margin-top: 1.6em; */
+  /* Change position of button */
+  margin-left: auto;
+  margin-right: auto;
+  /* margin-top: 1.6em; */
 
-    cursor: pointer;
-    width: 12.5em;
-    height: 2.6em;
-    background: var(--thunk-pink);
-    border-radius: 4.2em;
-    box-shadow: var(--drop-shadow);
+  cursor: pointer;
+  width: 12.5em;
+  height: 2.6em;
+  background: var(--thunk-pink);
+  border-radius: 4.2em;
+  box-shadow: var(--drop-shadow);
 
-    font-family: var(--McLaren);
-    font-size: 1.125em;
-    color: #fff;
-    display: block;
+  font-family: var(--McLaren);
+  font-size: 1.125em;
+  color: #fff;
+  display: block;
 }
 
 .btnHome {
-    display: inline;
+  display: inline;
 }
 
-button:hover, button:active, button:focus {
-    background: var(--pink-gradient);
+button:hover,
+button:active,
+button:focus {
+  background: var(--pink-gradient);
 }
 
 /* unfilled button style */
-button:disabled, button[disabled] {
-    background: none;
-    border: 3px solid var(--muted-purple);
-    cursor: default;
+button:disabled,
+button[disabled] {
+  background: none;
+  border: 3px solid var(--muted-purple);
+  cursor: default;
+}
+
+.btnAnswer.btn {
+  margin-bottom: 2rem;
 }
 
 @media screen and (max-width: 40rem) {
-    #btnCreateGame{
-        width: 37.25vw;
-    }
-    #btnJoinGame{
-        width: 37.25vw;
-    }
+  button {
+    max-width: 80%;
+    margin-bottom: 2rem;
+  }
+
+  /* #btnCreateGame,
+  #btnJoinGame {
+  } */
+
+  .buttons.enter-game {
+    display: flex;
+    flex-direction: column;
+  }
 }

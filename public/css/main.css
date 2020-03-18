@@ -38,6 +38,7 @@
   padding: 0;
   box-sizing: border-box;
 }
+
 :root {
   /* --pl-red: #EB5757;
     --pl-orange: #F2994A;
@@ -74,7 +75,7 @@
     var(--background-purple) 0%,
     var(--background-dark-purple) 100%
   );
-  --muted-purpe: #a65875;
+  --muted-purple: #a65875;
 
   /* Fonts */
   --Avenir-Next: "Avenir Next", Arial, Helvetica, sans-serif;
@@ -165,6 +166,14 @@ main {
   align-items: center;
   padding-top: 3rem;
   position: relative;
+}
+
+main.host {
+  padding-top: 15rem;
+}
+
+main.pl {
+  justify-content: center;
 }
 
 .game-title {
@@ -340,6 +349,7 @@ input[type="submit"]:focus {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  margin: 0 auto;
 }
 
 .player {
@@ -351,18 +361,10 @@ input[type="submit"]:focus {
 }
 
 .pl-avi {
-  --avi-size: 5.25rem;
   content: "";
   display: block;
-  width: var(--avi-size);
-  height: var(--avi-size);
-  background-color: #000;
   margin-bottom: 0.25rem;
   border-radius: 50%;
-}
-
-.pl-name {
-  font-weight: bold;
 }
 
 .hightlighted-player {
@@ -451,6 +453,8 @@ ol > li::before {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   padding-top: 0;
+  position: absolute;
+  top: 0;
 }
 
 .credit-container .title {
@@ -465,6 +469,7 @@ ol > li::before {
   width: 100%;
   height: 100vh;
   overflow-y: hidden;
+  z-index: -10;
 }
 
 .credit-container .cta {
@@ -503,6 +508,7 @@ ol > li::before {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 1.5rem;
+  color: #ffffff;
 }
 
 .member-roles {
@@ -533,8 +539,27 @@ ol > li::before {
   font-size: 2em;
 }
 
-input[type="text"]:focus {
-  outline: 3px solid #000;
+input[type="text"] {
+  width: 22.5rem;
+  display: block;
+  height: 4rem;
+  background: none;
+  border: none;
+  border: 3px solid #fff;
+  border-radius: 4rem;
+  text-align: center;
+  font-size: 2.5rem;
+  color: #fff;
+  margin: 1rem auto 2rem;
+  font-family: var(--Avenir-Next);
+  font-weight: bold;
+  outline: none;
+  padding: 1rem 2rem;
+  font-size: 1rem;
+}
+
+#inputPloy {
+  text-align: left;
 }
 
 input[type="text"]:invalid {
@@ -545,6 +570,13 @@ input[type="text"]:invalid {
   #playersAnswersArea {
     grid-template-columns: 1fr 1fr;
   }
+}
+
+.gameOver {
+  color: #ffffff;
+  margin-bottom: 2rem;
+  font-size: 3rem;
+  font-weight: bold;
 }
 
 @media screen and (max-width: 40rem) {
@@ -777,4 +809,12 @@ input[type="text"]:invalid {
 #playersAnswersArea .playerAnswer .playersVotesArea .playerVote .bonus {
   color: #000000;
   background-color: var(--gray-bg-color);
+}
+
+.waitScreenWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
 }

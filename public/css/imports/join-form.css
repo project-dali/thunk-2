@@ -1,38 +1,39 @@
-.welcome { 
-	position: absolute;
-	top: 12.5rem;
-	left: 5rem;
-	font-family: var(--Avenir-Next);
-	font-weight: bold;
-	font-size: 2rem;
-	line-height: 3.125rem;
-	text-align: center;
-	color: #FFFFFF;
+.welcome {
+  position: absolute;
+  top: 12.5rem;
+  left: 5rem;
+  font-family: var(--Avenir-Next);
+  font-weight: bold;
+  font-size: 2rem;
+  line-height: 3.125rem;
+  text-align: center;
+  color: #ffffff;
 }
 
 .subtitle {
-	width: 100%;
-	font-family: var(--McLaren);
-	font-size: 1.5rem;
-	text-align: center;
-	color: #FFFFFF;
-	font-weight: normal;
+  width: 100%;
+  font-family: var(--McLaren);
+  font-size: 1.5rem;
+  text-align: center;
+  color: #ffffff;
+  font-weight: normal;
 }
 
-#room-code { 
-	position: absolute;
-	left: 4.75rem;
-	top: 25rem;
-	bottom: 2.4rem;
-	width: 16rem;
-	height: 3.2rem;
-	border: 2px solid #FFFFFF;
-	box-sizing: border-box;
-	border-radius: 3.2rem;
-	background-color: transparent;
+#room-code {
+  position: absolute;
+  left: 4.75rem;
+  top: 25rem;
+  bottom: 2.4rem;
+  width: 16rem;
+  height: 3.2rem;
+  border: 2px solid #ffffff;
+  box-sizing: border-box;
+  border-radius: 3.2rem;
+  background-color: transparent;
 }
 
-#inputGameId, #inputPlayerName {
+#inputGameId,
+#inputPlayerName {
   width: 100%;
   display: block;
   height: 4rem;
@@ -43,31 +44,41 @@
   text-align: center;
   font-size: 2.5rem;
   color: #fff;
-	margin: 1rem auto 2rem;
-	font-family: var(--Avenir-Next);
-	font-weight: bold;
+  margin: 1rem auto 2rem;
+  font-family: var(--Avenir-Next);
+  font-weight: bold;
   outline: none;
 }
 
 /* Hide up-down option */
 /* Chrome, Safari, Edge, Opera */
-input[type=number]::-webkit-inner-spin-button,
-input[type=number]::-webkit-outer-spin-button
-{
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
 /* Firefox */
-input[type=number] {
-  -moz-appearance:textfield;
+input[type="number"] {
+  -moz-appearance: textfield;
 }
 
-label[for*="inputGameId"], label[htmlfor*="inputGameId"],
-label[for*="inputPlayerName"], label[htmlfor*="inputPlayerName"] {
-	font-size: 1.5rem;
-	font-family: var(--McLaren);
-	color: #fff;
-	text-align: center;
-	width: 100%;
-	display: block;
+label[for*="inputGameId"],
+label[htmlfor*="inputGameId"],
+label[for*="inputPlayerName"],
+label[htmlfor*="inputPlayerName"] {
+  font-size: 1.5rem;
+  font-family: var(--McLaren);
+  color: #fff;
+  text-align: center;
+  width: 100%;
+  display: block;
+}
+
+@media screen and (max-width: 40rem) {
+  #inputPlayerName {
+    max-width: 80%;
+  }
+  input {
+    max-width: 80%;
+  }
 }

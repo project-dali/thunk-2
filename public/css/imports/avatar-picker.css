@@ -3,6 +3,8 @@ form#inputPlayerAvatar {
 	grid-gap: 1.5rem;
 	grid-template-columns: repeat(3, 1fr);
 	justify-items: center;
+	color: #ffffff;
+	margin: 3rem 0;
 }
 
 form#inputPlayerAvatar label span.name{
